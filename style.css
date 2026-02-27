@@ -588,20 +588,21 @@ font-weight: 500;
   gap: 15px;
 
   /* ============================= */
-/* ARRUMAR TEXTO DO ENDEREÇO */
+/* LOCALIZAÇÃO - AJUSTE MOBILE */
 /* ============================= */
 
-#localizacao p {
-  grid-column: span 2;
-  text-align: center;
-  line-height: 1.6;
-  font-size: 15px;
-  margin-top: 10px;
+/* Esconde o primeiro parágrafo (endereço) */
+#localizacao p:first-of-type {
+  display: none;
 }
 
-/* Deixa o texto principal mais forte */
-#localizacao p:first-of-type {
-  font-weight: 500;
+/* Deixa o horário centralizado e bonito */
+#localizacao p:last-of-type {
+  grid-column: span 2;
+  text-align: center;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-top: 10px;
 }
 
 }
