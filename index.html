@@ -143,6 +143,37 @@ para garantir durabilidade e segurança.
 </div>
 </section>
 
+<!-- POR QUE ESCOLHER -->
+<section id="porque" class="secao-geral section-highlight">
+<div class="container">
+<h2>Por que escolher a gente?</h2>
+
+<div class="porque-box">
+
+<p>
+Somos extremamente pontuais com todos os horários agendados,
+respeitando o tempo e a organização dos nossos clientes.
+</p>
+
+<p>
+Estamos sempre disponíveis dentro do nosso horário de funcionamento,
+garantindo atendimento rápido e suporte quando você precisar.
+</p>
+
+<p>
+Nossos serviços são realizados com responsabilidade,
+transparência e total confiança em cada detalhe.
+</p>
+
+<p>
+Trabalhamos com preços justos e acessíveis,
+oferecendo sempre o melhor custo-benefício para você.
+</p>
+
+</div>
+</div>
+</section>
+
 <!-- AGENDAMENTO -->
 <section id="agendamento" class="secao-geral section-highlight">
 <div class="container-large">
@@ -153,33 +184,35 @@ para garantir durabilidade e segurança.
 <div class="linha-form">
 <div class="form-group">
 <label>Nome Completo</label>
-<input type="text" required>
+<input type="text" id="nome" required>
 </div>
 
 <div class="form-group">
 <label>Telefone</label>
-<input type="tel" required>
+<input type="tel" id="telefone" required>
 </div>
 </div>
 
 <div class="linha-form">
 <div class="form-group">
 <label>Modelo do Carro</label>
-<input type="text" required>
+<input type="text" id="carro" required>
 </div>
 
 <div class="form-group">
 <label>Serviço Desejado</label>
-<input type="text" required>
+<input type="text" id="servico" required>
 </div>
 </div>
 
 <div class="form-group grande">
 <label>Observações</label>
-<textarea required></textarea>
+<textarea id="obs" required></textarea>
 </div>
 
-<button class="btn-agendar">Enviar Agendamento</button>
+<button type="button" class="btn-agendar" onclick="enviarWhatsApp()">
+Enviar Agendamento
+</button>
 
 </form>
 </div>
@@ -278,7 +311,41 @@ card.addEventListener('click',()=>{
 card.classList.toggle('active');
 });
 });
+
+function enviarWhatsApp() {
+
+let nome = document.getElementById("nome").value;
+let telefone = document.getElementById("telefone").value;
+let carro = document.getElementById("carro").value;
+let servico = document.getElementById("servico").value;
+let obs = document.getElementById("obs").value;
+
+if(!nome || !telefone || !carro || !servico || !obs){
+alert("Por favor, preencha todos os campos.");
+return;
+}
+
+let numero = "5531986405265";
+
+let mensagem =
+"Olá, gostaria de agendar um serviço.%0A%0A" +
+"Nome: " + nome + "%0A" +
+"Telefone: " + telefone + "%0A" +
+"Carro: " + carro + "%0A" +
+"Serviço: " + servico + "%0A" +
+"Observações: " + obs;
+
+let url = "https://wa.me/" + numero + "?text=" + mensagem;
+
+window.open(url, "_blank");
+}
 </script>
+
+<a href="https://wa.me/5531986405265" 
+   class="whatsapp-fixo" 
+   target="_blank">
+   <i class="fab fa-whatsapp"></i>
+</a>
 
 </body>
 </html>
