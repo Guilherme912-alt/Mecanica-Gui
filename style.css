@@ -521,80 +521,82 @@ font-weight: 500;
 /* MELHORIAS CELULAR */
 /* ============================= */
 
+/* ================================= */
+/* NOVO LAYOUT MOBILE PROFISSIONAL */
+/* ================================= */
+
 @media (max-width: 768px) {
 
-/* HERO MAIS CONTROLADO */
-.hero-section {
-  min-height: auto;
-  padding: 60px 20px;
+/* REMOVE HERO NO CELULAR */
+#inicio {
+  display: none;
 }
 
-.hero-container {
+/* ESPAÇAMENTO GERAL */
+.secao-geral {
+  padding: 40px 15px;
+}
+
+/* ORGANIZA SEÇÕES EM JANELAS */
+.container,
+.container-large {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 20px;
-}
-
-.hero-textos {
-  display: flex;
-  flex-direction: column;
   gap: 15px;
 }
 
-.titulo-box {
-  background: #111;
-  padding: 15px;
-  border-left: 4px solid #ffd000;
-  border-radius: 8px;
+/* TÍTULOS OCUPAM LINHA TODA */
+.container h2,
+.container-large h2 {
+  grid-column: span 2;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-.subtitulo-box {
-  background: #111;
-  padding: 15px;
-  border-left: 4px solid #ffd000;
-  border-radius: 8px;
+/* ELEMENTOS GRANDES OCUPAM LINHA TODA */
+.sobre-principal-box,
+.porque-box,
+.pergunta-card,
+.botoes-localizacao,
+.form-agendamento {
+  grid-column: span 2;
 }
 
-.titulo-box h1 {
-  font-size: 18px;
-}
-
-.subtitulo-box p {
-  font-size: 14px;
-}
-
-.hero-logo img {
-  width: 100%;
-  max-width: 180px;
-}
-
-/* SERVIÇOS MAIS ORGANIZADO */
+/* SERVIÇOS EM 2 COLUNAS */
 .cards-servicos {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 15px;
 }
 
-/* SOBRE EM GRID IGUAL PC */
+/* SOBRE EM 2 COLUNAS */
 .sobre-cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 15px;
 }
 
-/* SE NÃO COUBER, DESCE AUTOMATICO */
+/* LOCALIZAÇÃO AJUSTE */
+#localizacao .container {
+  padding: 25px;
+}
+
+/* FORMULÁRIO ORGANIZADO */
+.linha-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* SE TELA FOR MUITO PEQUENA */
 @media (max-width: 500px) {
 
-  .hero-container {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .cards-servicos {
+  .container,
+  .container-large {
     grid-template-columns: 1fr;
   }
 
+  .cards-servicos,
   .sobre-cards {
     grid-template-columns: 1fr;
   }
@@ -602,7 +604,6 @@ font-weight: 500;
 }
 
 }
-
 
 /* ============================= */
 /* LOCALIZAÇÃO ESTILO PREMIUM */
