@@ -523,46 +523,87 @@ font-weight: 500;
 
 @media (max-width: 768px) {
 
+/* HERO MAIS CONTROLADO */
+.hero-section {
+  min-height: auto;
+  padding: 60px 20px;
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 20px;
+}
+
+.hero-textos {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.titulo-box {
+  background: #111;
+  padding: 15px;
+  border-left: 4px solid #ffd000;
+  border-radius: 8px;
+}
+
+.subtitulo-box {
+  background: #111;
+  padding: 15px;
+  border-left: 4px solid #ffd000;
+  border-radius: 8px;
+}
+
+.titulo-box h1 {
+  font-size: 18px;
+}
+
+.subtitulo-box p {
+  font-size: 14px;
+}
+
+.hero-logo img {
+  width: 100%;
+  max-width: 180px;
+}
+
+/* SERVIÇOS MAIS ORGANIZADO */
+.cards-servicos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+/* SOBRE EM GRID IGUAL PC */
+.sobre-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+/* SE NÃO COUBER, DESCE AUTOMATICO */
+@media (max-width: 500px) {
+
   .hero-container {
-    flex-direction: column;
+    grid-template-columns: 1fr;
     text-align: center;
-  }
-
-  .hero-logo img {
-    width: 70%;
-    margin-top: 20px;
-  }
-
-  .titulo-box h1 {
-    font-size: 24px;
-  }
-
-  .subtitulo-box p {
-    font-size: 15px;
   }
 
   .cards-servicos {
     grid-template-columns: 1fr;
   }
 
-  .linha-form {
-    flex-direction: column;
-  }
-
-  .form-group {
-    width: 100%;
-  }
-
-  .form-group.grande textarea {
-    width: 100%;
-  }
-
-  .nav-principal {
-    flex-direction: column;
-    gap: 10px;
+  .sobre-cards {
+    grid-template-columns: 1fr;
   }
 
 }
+
+}
+
+
 /* ============================= */
 /* LOCALIZAÇÃO ESTILO PREMIUM */
 /* ============================= */
