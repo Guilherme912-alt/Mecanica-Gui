@@ -527,6 +527,18 @@ font-weight: 500;
 
 @media (max-width: 768px) {
 
+    /* REMOVE COMPLETAMENTE O ENDEREÇO NO CELULAR */
+#localizacao p:first-of-type {
+  display: none !important;
+}
+
+/* GARANTE QUE SÓ O HORÁRIO FIQUE */
+#localizacao p:last-of-type {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin: 0 auto;
+}
+
 /* REMOVE HERO NO CELULAR */
 #inicio {
   display: none;
