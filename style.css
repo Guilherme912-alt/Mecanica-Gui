@@ -586,6 +586,24 @@ font-weight: 500;
   display: flex;
   flex-direction: column;
   gap: 15px;
+
+  /* ============================= */
+/* ARRUMAR TEXTO DO ENDEREÇO */
+/* ============================= */
+
+#localizacao p {
+  grid-column: span 2;
+  text-align: center;
+  line-height: 1.6;
+  font-size: 15px;
+  margin-top: 10px;
+}
+
+/* Deixa o texto principal mais forte */
+#localizacao p:first-of-type {
+  font-weight: 500;
+}
+
 }
 
 /* SE TELA FOR MUITO PEQUENA */
